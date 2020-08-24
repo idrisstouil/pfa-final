@@ -12,6 +12,19 @@ import { ControlSidebarComponent } from './main/control-sidebar/control-sidebar.
 import { HomeComponent } from './pages/home/home.component';
 import { ContactsComponent } from './pages/contacts/contacts.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
+import { GererBacklogComponent } from './pages/gerer-backlog/gerer-backlog.component';
+import { GererTachesComponent } from './pages/gerer-taches/gerer-taches.component';
+import { BurtdownChartComponent } from './pages/burtdown-chart/burtdown-chart.component';
+import { AvancementProjetComponent } from './pages/avancement-projet/avancement-projet.component';
+import { InboxComponent } from './pages/inbox/inbox.component';
+import { ChatComponent } from './pages/chat/chat.component';
+import { ProfileComponent } from './pages/profile/profile.component';
+import { GererProjetComponent } from './pages/gerer-projet/gerer-projet.component';
+import { ProjetCardComponent } from './pages/partials/projet-card/projet-card.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatDialogModule } from '@angular/material/dialog';
+import { CreerUserstoryComponent } from './pages/dialog/creer-userstory/creer-userstory.component';
+import { CreerSprintComponent } from './pages/dialog/creer-sprint/creer-sprint.component';
 
 @NgModule({
   declarations: [
@@ -24,12 +37,26 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
     ControlSidebarComponent,
     HomeComponent,
     ContactsComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    GererBacklogComponent,
+    GererTachesComponent,
+    BurtdownChartComponent,
+    AvancementProjetComponent,
+    InboxComponent,
+    ChatComponent,
+    ProfileComponent,
+    GererProjetComponent,
+    ProjetCardComponent,
+    CreerUserstoryComponent,
+    CreerSprintComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    MatDialogModule,
+    AppRoutingModule,
+    BrowserAnimationsModule
   ],
+  
   providers: [],
   bootstrap: [AppComponent]
 })

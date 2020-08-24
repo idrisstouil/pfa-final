@@ -21,13 +21,15 @@
             "aot": true,
             "assets": [
               "src/favicon.ico",
-              "src/assets",{
+              "src/assets",
+              {
                 "glob": "**/*",
                 "input": "node_modules/admin-lte/dist/img",
                 "output": "./assets/admin-lte/dist/img"
               }
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.css",
               "node_modules/admin-lte/plugins/fontawesome-free/css/all.min.css",
               "node_modules/admin-lte/plugins/icheck-bootstrap/icheck-bootstrap.min.css",
@@ -99,6 +101,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -130,6 +133,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "Angular9AdminLte3"
 }
