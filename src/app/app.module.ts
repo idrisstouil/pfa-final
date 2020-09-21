@@ -25,6 +25,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';
 import { CreerUserstoryComponent } from './pages/dialog/creer-userstory/creer-userstory.component';
 import { CreerSprintComponent } from './pages/dialog/creer-sprint/creer-sprint.component';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ import { CreerSprintComponent } from './pages/dialog/creer-sprint/creer-sprint.c
   ],
   imports: [
     BrowserModule,
+    DragDropModule,
     MatDialogModule,
     AppRoutingModule,
     BrowserAnimationsModule
