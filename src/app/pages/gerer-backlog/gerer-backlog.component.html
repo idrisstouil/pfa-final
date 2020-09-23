@@ -1,51 +1,97 @@
 
-    
+    <div class="countainerpane">
+
     <div class="row">
         <div class="col-sm-4">
-    <button type="button" (click)="creersprint()" class="btn  btn-primary">creer Sprint</button>
-    
-    </div>
+          <button type="button" (click)="creerUser()" class="btn  btn-primary">creer user story</button>
+          
+      <div class="card">
+        <div class="card-header">
+          <h4 class="card-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseCreat" class="" aria-expanded="true">
+              Liste des user stories
+            </a>
+          </h4>
+        </div>
+
+
+        <!-- /.card-header -->
+        <div id="collapseCreat" class="panel-collapse collapse show" >
+          <div class="card-body">
+
+          <div cdkDropList #doneList="cdkDropList" [cdkDropListData]="done" [cdkDropListConnectedTo]="[pendingList]"
+          class="item-list" (cdkDropListDropped)="drop($event)" id="accordion">
+            <!-- we are adding the .class so bootstrap.js collapse plugin detects it -->
+            <div class="callout callout-info item-box" *ngFor="let item of done" cdkDrag>
+
+              <div>{{item}}
+                <div class="float-right text-right py-0 align-middle">
+                  <div class="btn-group btn-group-sm">
+                    <a href="#" class="btn btn-info"><i class="fas fa-eye"></i></a>
+                    <a href="#" class="btn btn-danger"><i class="fas fa-trash"></i></a>
+                  </div>
+                </div>
+
+              </div>
+          
+
+            </div>
+        <!-- /.card-body -->
+        </div>
+    </div>    
+</div>
+        </div></div>
     <div class="col-sm-8">
-    <button type="button" (click)="creerUser()" class="btn  btn-primary">creer user story</button>
-    
+      <button type="button" (click)="creersprint()" class="btn  btn-primary">creer Sprint</button>
+
 
       <!-- liste userstories -->
 
       <div class="card">
         <div class="card-header">
-          <h3 class="card-title">liste user stories</h3>
+          <h4 class="card-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseUserStory" class="" aria-expanded="true">
+              Liste des user stories
+            </a>
+          </h4>
         </div>
         <!-- /.card-header -->
+        <div id="collapseUserStory" class="panel-collapse collapse show" >
         <div class="card-body">
-          <div id="accordion">
+          <div id="accordion"  cdkDropList #pendingList="cdkDropList" [cdkDropListData]="todo" [cdkDropListConnectedTo]="[doneList]" class="item-list" (cdkDropListDropped)="drop($event)">
             <!-- we are adding the .class so bootstrap.js collapse plugin detects it -->
-            <div class="card card-primary">
-              <div class="card-header">
-                <h4 class="card-title">
-                  <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" class="collapsed" aria-expanded="false">
-                    Collapsible Group Item #1
-                  </a>
-                </h4>
-              </div>
-              <div id="collapseOne" class="panel-collapse in collapse" style="">
-                <div class="card-body">
-                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
-                  3
-                  wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt
-                  laborum
-                  eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee
-                  nulla
-                  assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
-                  nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft
-                  beer
-                  farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
-                  labore sustainable VHS.
-                </div>
-              </div>
-            </div>
-        <!-- /.card-body -->
-      </div>
-    </div>    
-</div>
+            <div  class="callout callout-warning item-box" *ngFor="let item of todo" cdkDrag>
 
+              <div>{{item}}
+                <div class="float-right text-right py-0 align-middle">
+                  <div class="btn-group btn-group-sm">
+                    <a href="#" class="btn btn-info"><i class="fas fa-eye"></i></a>
+                    <a href="#" class="btn btn-danger"><i class="fas fa-trash"></i></a>
+                  </div>
+                </div>
+
+              </div>
+              
+              </div>
+              </div>
+        <!-- /.card-body -->
+        </div>
+    </div>    
+  </div>
+
+
+<div class="card">
+  <div class="card-header">
+    <h3 class="card-title">User Story 2</h3>
+  </div>
+  <!-- /.card-header -->
+  <div class="card-body">
+    <div id="accordion">
+      <!-- we are adding the .class so bootstrap.js collapse plugin detects it -->
+     
+  <!-- /.card-body -->
+  </div>
+</div>    
+</div>
+    </div>
     </div>
