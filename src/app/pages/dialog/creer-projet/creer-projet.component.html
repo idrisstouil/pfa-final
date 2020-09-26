@@ -1,0 +1,60 @@
+<div class="card card-primary">
+    <div class="card-header">
+      <h3 class="card-title">Quick Example </h3>
+    </div>
+    <!-- /.card-header -->
+    <!-- form start -->
+    <form role="form">
+      <div class="card-body">
+        <div class="form-group">
+          <label for="titreuserstory">Titre</label>
+          <input name="titre" [(ngModel)]="projet.name" type="text" class="form-control" id="text" placeholder="Titre de userstory">
+        </div>
+
+        <div class="form-group">
+            <label for="description">Description</label>
+            <input name="description" [(ngModel)]="projet.description" type="text" class="form-control" id="text" placeholder="Description">
+        </div>
+
+        <div class="form-group">
+            <label>Filiere</label>
+            <select  disabled="" class="form-control">
+              <option>Genie informatique</option>
+            
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label>Date debut:</label>
+
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
+              </div>
+              <input name="date_debut" [(ngModel)]="projet.date_debut " type="text" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask="" im-insert="false">
+            </div>
+            <!-- /.input group -->
+          </div>
+
+          <div class="form-group">
+            <label>Duree</label>
+            <select class="custom-select" disabled="">
+              <option>3 mois</option>
+            
+            </select>
+          </div>
+
+        <div class="form-group">
+            <label for="Comentaire">Comentaire</label>
+            <input type="text" class="form-control" id="text" placeholder="Comentaire">
+        </div>
+
+    
+      </div>
+      <!-- /.card-body -->
+ 
+      <div class="card-footer">
+        <button (click)="creerProjet()" type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </form>
+  </div>

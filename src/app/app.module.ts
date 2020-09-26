@@ -26,6 +26,10 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { CreerUserstoryComponent } from './pages/dialog/creer-userstory/creer-userstory.component';
 import { CreerSprintComponent } from './pages/dialog/creer-sprint/creer-sprint.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { CreerProjetComponent } from './pages/dialog/creer-projet/creer-projet.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { JwtInterceptor } from './services/jwt.interceptor';
 
 @NgModule({
   declarations: [
@@ -49,17 +53,24 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     GererProjetComponent,
     ProjetCardComponent,
     CreerUserstoryComponent,
-    CreerSprintComponent
+    CreerSprintComponent,
+    CreerProjetComponent
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     DragDropModule,
     MatDialogModule,
+    FormsModule,
     AppRoutingModule,
     BrowserAnimationsModule
   ],
   
-  providers: [],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: JwtInterceptor,
+    multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

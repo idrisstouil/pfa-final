@@ -13,6 +13,7 @@ import { InboxComponent } from './pages/inbox/inbox.component';
 import { ChatComponent } from './pages/chat/chat.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { GererProjetComponent } from './pages/gerer-projet/gerer-projet.component';
+import { AuthGuard } from './guards/auth.guard';
 
 
 const routes: Routes = [
@@ -47,7 +48,7 @@ const routes: Routes = [
     // },
      {
       path: '**', component: PageNotFoundComponent
-    }]
+    }],canActivate:[AuthGuard]
   }
 ];
 
