@@ -30,6 +30,7 @@ import { CreerProjetComponent } from './pages/dialog/creer-projet/creer-projet.c
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { JwtInterceptor } from './services/jwt.interceptor';
+import { ViewProjetComponent } from './pages/view-projet/view-projet.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ import { JwtInterceptor } from './services/jwt.interceptor';
     ProjetCardComponent,
     CreerUserstoryComponent,
     CreerSprintComponent,
-    CreerProjetComponent
+    CreerProjetComponent,
+    ViewProjetComponent
   ],
   imports: [
     BrowserModule,

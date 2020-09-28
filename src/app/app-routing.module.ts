@@ -14,6 +14,7 @@ import { ChatComponent } from './pages/chat/chat.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { GererProjetComponent } from './pages/gerer-projet/gerer-projet.component';
 import { AuthGuard } from './guards/auth.guard';
+import { ViewProjetComponent } from './pages/view-projet/view-projet.component';
 
 
 const routes: Routes = [
@@ -42,6 +43,8 @@ const routes: Routes = [
       path: 'profile', component: ProfileComponent
     }, {
       path: 'projets', component: GererProjetComponent
+    },{
+      path: 'projet/:id',component:ViewProjetComponent
     },
      //{
     //   path: '**', component: PageNotFoundComponent

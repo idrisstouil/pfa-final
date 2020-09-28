@@ -1,0 +1,8 @@
+.countainerpane{
+    overflow-x: hidden;
+    width: 100%;
+    padding-right: 8px;
+    padding-left: 8px;
+    margin-right: auto;
+    margin-left: auto;
+}

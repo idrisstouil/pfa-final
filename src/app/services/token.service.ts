@@ -10,6 +10,8 @@ export class TokenService {
   set(data: any) {
     localStorage.setItem('token', data.token);
     localStorage.setItem('id', data.id);
+
+  
   }
 
   handle(data) {
@@ -23,6 +25,7 @@ export class TokenService {
   getId() {
     return localStorage.getItem('id');
   }
+
 
   remove() {
     localStorage.removeItem('token');

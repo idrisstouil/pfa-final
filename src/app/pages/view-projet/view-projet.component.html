@@ -1,0 +1,175 @@
+    <div class="countainerpane">
+    <!-- Content Header (Page header) -->
+
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Project Edit</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">Project Edit</li>
+            </ol>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="card card-primary">
+            <div class="card-header">
+              <h3 class="card-title">General</h3>
+
+              <div class="card-tools">
+                <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                  <i class="fas fa-minus"></i></button>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="form-group">
+                <label for="inputName">Nom de projet</label>
+                <input type="text" name="projet_name" [(ngModel)]="projet.name" id="inputName" class="form-control" value="AdminLTE">
+              </div>
+              <div class="form-group">
+                <label for="inputDescription">Description de projet</label>
+                <textarea id="inputDescription"  name="projet_description" [(ngModel)]="projet.description" class="form-control" rows="4"></textarea>
+              </div>
+              <div class="form-group">
+                <label for="inputStatus">Date de debut</label>
+                <input  name="projet_date_debut" [(ngModel)]="projet.date_debut" type="text" id="inputClientCompany" class="form-control" value="Deveint Inc">
+              </div>
+             
+              <div class="form-group">
+                <label for="inputProjectLeader">Progress</label>
+                <div class="progress-group">
+                    <span class="progress-text">Visit Premium Page</span>
+                    <span class="float-right"><b>480</b>/800</span>
+                    <div class="progress progress-sm">
+                      <div class="progress-bar bg-success" style="width: 60%"></div>
+                    </div>
+                  </div>
+              </div>
+
+              <div class="form-group">
+                <label for="inputStatus">projet status</label>
+             </div>
+              <span class="badge badge-warning">Pending</span>
+
+           
+              
+            </div>
+            <!-- /.card-body -->
+          </div>
+          <!-- /.card -->
+        </div>
+        <div class="col-md-6">
+          <div class="card card-secondary">
+            <div class="card-header">
+              <h3 class="card-title">Ficher de projet</h3>
+
+              <div class="card-tools">
+                <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                  <i class="fas fa-minus"></i></button>
+              </div>
+            </div>
+            <div class="card-body">
+                <div class="form-group">
+                    <label for="exampleInputFile">Fichier de projet</label>
+                    <div class="input-group">
+                      <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="exampleInputFile">
+                        <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                      </div>
+                      <div class="input-group-append">
+                        <span class="input-group-text" id="">Upload</span>
+                      </div>
+                    </div>
+                  </div>
+    
+                  <div class="form-group">
+                    <label for="inputProjectLeader">Telecharger projet sources</label>
+                    <button type="button" class="btn btn-block btn-secondary">Download</button>
+                  </div>
+            </div>
+            <!-- /.card-body -->
+          </div>
+          <!-- /.card -->
+          <div class="card card-info">
+            <div class="card-header">
+              <h3 class="card-title">Equipe</h3>
+
+              <div class="card-tools">
+                <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                  <i class="fas fa-minus"></i></button>
+              </div>
+            </div>
+            <div class="card-body p-0">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Nom </th>
+                    <th>Role</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <select *ngFor="let user of AllUsers"  class="form-control">
+                        <option>Encadrant</option>
+
+                        <option>{{user.admin}}</option>
+                      </select>
+                    </td>
+                    <td>
+
+                      <select class="form-control">
+                        <option>Etudiant</option>
+                        <option>Encadrant</option>
+                        
+                      </select>
+                    </td>
+                    <td>
+                      <label> </label>
+                      
+                      <a class="btn btn-info btn-sm float-right" href="#">
+                      <i class="fas fa-pencil-alt">
+                      </i>
+                      Ajouter
+                  </a></td>
+                  </tr>
+                  <tr *ngFor="let user of projet.users">
+                    <td>{{user.admin}}</td>
+                    <td>{{user.email}}</td>
+                    <td class="text-right py-0 align-middle">
+                      <div class="btn-group btn-group-sm">
+                        <a href="#" class="btn btn-info"><i class="fas fa-eye"></i></a>
+                        <a href="#" class="btn btn-danger"><i class="fas fa-trash"></i></a>
+                      </div>
+                    </td>
+                  </tr>
+
+                 
+                
+                </tbody>
+              </table>
+            </div>
+            <!-- /.card-body -->
+          </div>
+          <!-- /.card -->
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <a href="#" class="btn btn-secondary">Cancel</a>
+          <input type="submit" value="Save Changes" class="btn btn-success float-right">
+        </div>
+      </div>
+    </section>
+</div>
+    <!-- /.content -->

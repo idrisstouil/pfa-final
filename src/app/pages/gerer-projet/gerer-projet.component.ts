@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { Projet } from 'src/app/models/projet';
+import { User } from 'src/app/models/User';
+import { DashboardServiceService } from 'src/app/services/dashboard-service.service';
 import { CreerProjetComponent } from '../dialog/creer-projet/creer-projet.component';
 
 @Component({
@@ -9,11 +12,12 @@ import { CreerProjetComponent } from '../dialog/creer-projet/creer-projet.compon
 })
 export class GererProjetComponent implements OnInit {
 
-  constructor(public dialog: MatDialog) { }
+  constructor(public dialog: MatDialog,private dashboardService:DashboardServiceService) { }
 
   ngOnInit(): void {
+    this.afficherProjets()
   }
-
+  projets:Projet[]=[]
   creerProjet(){
     
     const dialogRef = this.dialog.open(CreerProjetComponent, {
@@ -26,6 +30,12 @@ export class GererProjetComponent implements OnInit {
       
     });
   }
+
+  afficherProjets(){
+    this.dashboardService.afficherProjets().subscribe((res:Projet[])=> {
+      this.projets=res
+    }
+  )}
 
 
 }
